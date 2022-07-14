@@ -25,7 +25,7 @@ for _ in scramble:
     elif _ == "L":
         perm[0], perm[5], perm[3] = perm[5], perm[3], perm[0]
         centers[2] = (centers[2] + 1) % 3
-        orient[0], orient[5], orient[3] = orient[5], (orient[3] + 1) % 2, (orient[1] + 1) % 2
+        orient[0], orient[5], orient[3] = orient[5], (orient[3] + 1) % 2, (orient[0] + 1) % 2
     elif _ == "L'":
         perm[0], perm[5], perm[3] = perm[3], perm[0], perm[5]
         centers[2] = (centers[2] - 1) % 3

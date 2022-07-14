@@ -29,7 +29,7 @@ for _ in scramble:
     elif _ == "L'":
         perm[0], perm[5], perm[3] = perm[3], perm[0], perm[5]
         centers[2] = (centers[2] - 1) % 3
-        orient[0], orient[5], orient[3] = (orient[3] + 1) % 2, orient[1], (orient[5] + 1) % 2
+        orient[0], orient[5], orient[3] = (orient[3] + 1) % 2, orient[0], (orient[5] + 1) % 2
     elif _ == "B":
         perm[2], perm[4], perm[5] = perm[4], perm[5], perm[2]
         centers[3] = (centers[3] + 1) % 3
@@ -38,7 +38,6 @@ for _ in scramble:
         perm[2], perm[4], perm[5] = perm[5], perm[2], perm[4]
         centers[3] = (centers[3] - 1) % 3
         orient[2], orient[4], orient[5] = (orient[5] + 1) % 2, orient[2], (orient[4] + 1) % 2
-
 def move(currentMove):
     global permCopy
     global centersCopy
@@ -62,11 +61,11 @@ def move(currentMove):
     elif currentMove == "L":
         permCopy[0], permCopy[5], permCopy[3] = permCopy[5], permCopy[3], permCopy[0]
         centersCopy[2] = (centersCopy[2] + 1) % 3
-        orientCopy[0], orientCopy[5], orientCopy[3] = orientCopy[5], (orientCopy[3] + 1) % 2, (orientCopy[1] + 1) % 2
+        orientCopy[0], orientCopy[5], orientCopy[3] = orientCopy[5], (orientCopy[3] + 1) % 2, (orientCopy[0] + 1) % 2
     elif currentMove == "L'":
         permCopy[0], permCopy[5], permCopy[3] = permCopy[3], permCopy[0], permCopy[5]
         centersCopy[2] = (centersCopy[2] - 1) % 3
-        orientCopy[0], orientCopy[5], orientCopy[3] = (orientCopy[3] + 1) % 2, orientCopy[1], (orientCopy[5] + 1) % 2
+        orientCopy[0], orientCopy[5], orientCopy[3] = (orientCopy[3] + 1) % 2, orientCopy[0], (orientCopy[5] + 1) % 2
     elif currentMove == "B":
         permCopy[2], permCopy[4], permCopy[5] = permCopy[4], permCopy[5], permCopy[2]
         centersCopy[3] = (centersCopy[3] + 1) % 3

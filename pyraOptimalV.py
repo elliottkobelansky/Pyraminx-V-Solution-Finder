@@ -95,7 +95,7 @@ def sols(n): #find all move sequences of length n
         solutions = np.array(solutions).flatten()
         solutions = solutions.tolist()
 
-for a in range(1, 6): #solution length can be 1-5.  THIS IS HOW YOU MODIFY POSSIBLE SOLUTION LENGTHS
+for a in range(1, 8): #solution length can be 1-5.  THIS IS HOW YOU MODIFY POSSIBLE SOLUTION LENGTHS
     #test a solution of length a
     #print solution out if it works
     #repeat for all possible solutions of length a
@@ -109,7 +109,66 @@ for a in range(1, 6): #solution length can be 1-5.  THIS IS HOW YOU MODIFY POSSI
         for c in range(len(b)):
             #print(b[c])
             move(b[c])
-        if ((centersCopy[0] == 0 and centersCopy[1] == 0 and centersCopy[2] == 0 and ((permCopy[0] == 0 and permCopy[1] == 1 and orientCopy[0] == 0 and orientCopy[1] == 0) or (permCopy[0] == 0 and permCopy[3] == 3 and orientCopy[0] == 0 and orientCopy[3] == 0) or (permCopy[1] == 1 and permCopy[3] == 3 and orientCopy[1] == 0 and orientCopy[3] == 0))) or (centersCopy[0] == 0 and centersCopy[1] == 0 and centersCopy[3] == 0 and ((permCopy[1] == 1 and permCopy[2] == 2 and orientCopy[1] == 0 and orientCopy[2] == 0) or (permCopy[1] == 1 and permCopy[4] == 4 and orientCopy[1] == 0 and orientCopy[4] == 0) or (permCopy[2] == 2 and permCopy[4] == 4 and orientCopy[2] == 0 and orientCopy[4] == 0))) or (centersCopy[0] == 0 and centersCopy[2] == 0 and centersCopy[3] == 0 and ((permCopy[0] == 0 and permCopy[2] == 2 and orientCopy[0] == 0 and orientCopy[2] == 0) or (permCopy[0] == 0 and permCopy[5] == 5 and orientCopy[0] == 0 and orientCopy[5] == 0) or (permCopy[2] == 2 and permCopy[5] == 5 and orientCopy[2] == 0 and orientCopy[5] == 0))) or (centersCopy[1] == 0 and centersCopy[2] == 0 and centersCopy[3] == 0 and ((permCopy[3] == 3 and permCopy[4] == 4 and orientCopy[3] == 0 and orientCopy[4] == 0) or (permCopy[3] == 3 and permCopy[5] == 5 and orientCopy[3] == 0 and orientCopy[5] == 0) or (permCopy[4] == 4 and permCopy[5] == 5 and orientCopy[4] == 0 and orientCopy[5] == 0)))):
+        if ((centersCopy[0] == 0 
+             and centersCopy[1] == 0 
+             and centersCopy[2] == 0 
+             and ((permCopy[0] == 0 
+                   and permCopy[1] == 1 
+                   and orientCopy[0] == 0 
+                   and orientCopy[1] == 0) 
+                  or (permCopy[0] == 0 
+                      and permCopy[3] == 3 
+                      and orientCopy[0] == 0 
+                      and orientCopy[3] == 0) 
+                  or (permCopy[1] == 1 
+                      and permCopy[3] == 3 
+                      and orientCopy[1] == 0 
+                      and orientCopy[3] == 0))) 
+                or (centersCopy[0] == 0 
+                    and centersCopy[1] == 0 
+                    and centersCopy[3] == 0 
+                    and ((permCopy[1] == 1 
+                          and permCopy[2] == 2 
+                          and orientCopy[1] == 0 
+                          and orientCopy[2] == 0) 
+                         or (permCopy[1] == 1 
+                             and permCopy[4] == 4 
+                             and orientCopy[1] == 0 
+                             and orientCopy[4] == 0) 
+                         or (permCopy[2] == 2 
+                             and permCopy[4] == 4 
+                             and orientCopy[2] == 0 
+                             and orientCopy[4] == 0))) 
+                or (centersCopy[0] == 0 
+                    and centersCopy[2] == 0 
+                    and centersCopy[3] == 0 
+                    and ((permCopy[0] == 0 
+                          and permCopy[2] == 2 
+                          and orientCopy[0] == 0 
+                          and orientCopy[2] == 0) 
+                         or (permCopy[0] == 0 
+                             and permCopy[5] == 5 
+                             and orientCopy[0] == 0 
+                             and orientCopy[5] == 0) 
+                         or (permCopy[2] == 2 
+                             and permCopy[5] == 5 
+                             and orientCopy[2] == 0 
+                             and orientCopy[5] == 0))) 
+                or (centersCopy[1] == 0 
+                    and centersCopy[2] == 0 
+                    and centersCopy[3] == 0 
+                    and ((permCopy[3] == 3 
+                          and permCopy[4] == 4 
+                          and orientCopy[3] == 0 
+                          and orientCopy[4] == 0) 
+                         or (permCopy[3] == 3 
+                             and permCopy[5] == 5 
+                             and orientCopy[3] == 0 
+                             and orientCopy[5] == 0) 
+                         or (permCopy[4] == 4 
+                             and permCopy[5] == 5 
+                             and orientCopy[4] == 0 
+                             and orientCopy[5] == 0)))):
             solutionAsString = ""
             for _ in b:
                 solutionAsString += _

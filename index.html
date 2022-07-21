@@ -1,11 +1,49 @@
 <!DOCTYPE html>
 <html>
+	<script 
+		src="https://cdn.cubing.net/js/cubing/twisty" 
+		type="module"></script>
+	<script src="py.js"></script>
 	<head>
         <title>Pyraminx V Solution Finder</title>
 	</head>
 	<body>
 		<h1>Pyraminx V Solution Finder</h1>
-		<input type="text" id="i1" name="hi">
-		<input type="submit" value="Submit">
+		<form id='input'>
+			<input type="text" name="scramble" placeholder="Scramble" autocomplete="off">
+			<select name="depth">
+				<option value=2>2</option>
+				<option value=3>3</option>
+				<option value=4>4</option>
+				<option value=5>5</option>
+				<option value=6>6</option>
+			</select>
+			<input type="submit" value="Go">
+		</form>
+		<twisty-player
+			experimental-setup-anchor="end"
+			experimental-setup-alg=""
+			visualization="2D"
+			puzzle="pyraminx"
+			viewer-link="none"
+			background="none"
+			control-panel="none"
+		></twisty-player>
+		<textarea id="output" rows="30" cols="45"></textarea>
 	</body>
+	<script>
+		const form = document.getElementById('input');
+
+		form.addEventListener('submit', (event) => {
+			event.preventDefault();
+			const depth = parseInt(form.elements['depth'].value);
+			const scramble = form.elements['scramble'].value;
+			document.querySelector("twisty-player").setAttribute("experimental-setup-alg", scramble);
+			const solutions = main(scramble, depth).join('\n');
+			document.getElementById("output").innerHTML = solutions;
+			console.log(solutions);
+			
+			
+		});
+	</script>
 </html>

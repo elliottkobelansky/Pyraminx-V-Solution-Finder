@@ -6,21 +6,12 @@
 	<script src="py.js"></script>
 	<head>
         <title>Pyraminx V Solution Finder</title>
+		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
 		<h1>Pyraminx V Solution Finder</h1>
-		<form id='input'>
-			<input type="text" name="scramble" placeholder="Scramble" autocomplete="off">
-			<select name="depth">
-				<option value=2>2</option>
-				<option value=3>3</option>
-				<option value=4>4</option>
-				<option value=5>5</option>
-				<option value=6>6</option>
-			</select>
-			<input type="submit" value="Go">
-		</form>
 		<twisty-player
+			class="twistyplayer"
 			experimental-setup-anchor="end"
 			experimental-setup-alg=""
 			visualization="2D"
@@ -29,7 +20,18 @@
 			background="none"
 			control-panel="none"
 		></twisty-player>
-		<textarea id="output" rows="30" cols="45"></textarea>
+		<form id='input'>
+			<input type="text" name="scramble" placeholder="Scramble" autocomplete="off">
+			<select name="depth">
+				<option value=2>2</option>
+				<option value=3>3</option>
+				<option value=4 selected>4</option>
+				<option value=5>5</option>
+				<option value=6>6</option>
+			</select>
+			<input type="submit" value="Go">
+		</form>
+		<textarea id="output" rows="15" cols="34"></textarea>
 	</body>
 	<script>
 		const form = document.getElementById('input');
